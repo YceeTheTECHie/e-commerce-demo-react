@@ -9,6 +9,7 @@ import {
   FaShoppingBasket,
   FaAlignRight,
   FaArrowRight,
+  FaSearch,
 } from "react-icons/fa";
 
 const Navbar = () => {
@@ -40,7 +41,11 @@ const Navbar = () => {
           className="header__searchInput"
           placeholder="Search Products by title,category,etc."
         />
-        <button className="header__searchIcon">Search</button>
+        <button className="header__searchIcon">
+          <FaSearch
+            style={{ marginTop: "10px", color: "white", fontSize: "30px" }}
+          />
+        </button>
         <button className="toggle__navigation" onClick={toggleNavigation}>
           {isToggled == true ? (
             <FaArrowRight

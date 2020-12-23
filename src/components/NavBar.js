@@ -42,9 +42,7 @@ const Navbar = () => {
           placeholder="Search Products by title,category,etc."
         />
         <button className="header__searchIcon">
-          <FaSearch
-            style={{ marginTop: "10px", color: "white", fontSize: "30px" }}
-          />
+          <FaSearch />
         </button>
         <button className="toggle__navigation" onClick={toggleNavigation}>
           {isToggled == true ? (

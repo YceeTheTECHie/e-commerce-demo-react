@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+
 import {
   FaSortDown,
   FaUserCircle,
@@ -12,7 +13,7 @@ import {
   FaSearch,
 } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({ toggleCategory }) => {
   const [isToggled, setisToggled] = useState(false);
 
   const toggleNavigation = () => {
@@ -21,10 +22,18 @@ const Navbar = () => {
     console.log(isToggled);
   };
 
+  const toggleCat = () => {
+    toggleCategory();
+  };
+
   return (
     <nav className="header">
       {/*Logo on theh left -> Image  */}
-
+      <button onClick={toggleCat} className="toggle__category">
+        <FaAlignRight
+          style={{ marginTop: "10px", color: "white", fontSize: "30px" }}
+        />
+      </button>
       <Link to="/">
         <img
           className="header__logo"
@@ -42,12 +51,11 @@ const Navbar = () => {
           placeholder="Search Products by title,category,etc."
         />
         <button className="header__searchIcon">
-          <FaSearch
-            style={{ marginTop: "10px", color: "white", fontSize: "30px" }}
-          />
+          <FaSearch />
         </button>
+
         <button className="toggle__navigation" onClick={toggleNavigation}>
-          {isToggled == true ? (
+          {isToggled === true ? (
             <FaArrowRight
               style={{ marginTop: "10px", color: "white", fontSize: "30px" }}
             />
@@ -59,7 +67,9 @@ const Navbar = () => {
         </button>
       </div>
       {/*  Links */}
-      <div className={isToggled == true ? "header__nav-mobile" : "header__nav"}>
+      <div
+        className={isToggled === true ? "header__nav-mobile" : "header__nav"}
+      >
         {/* Link 1 */}
         <Link to="/login" className="header__link">
           <div className="header__option">
@@ -68,7 +78,7 @@ const Navbar = () => {
             </span>
             <span className="header__optionLine2">
               <span>
-                My Account <FaUserCircle />
+                Account <FaUserCircle />
                 {"  "}
               </span>
             </span>
@@ -83,7 +93,11 @@ const Navbar = () => {
               Track <FaSortDown />{" "}
             </span>
             <span className="header__optionLine2">
-              Order <FaSearchLocation />{" "}
+              <span>
+                Track Order
+                {"  "}
+                <FaSearchLocation />{" "}
+              </span>
             </span>
           </div>
         </Link>
@@ -96,8 +110,8 @@ const Navbar = () => {
               Special <FaSortDown />{" "}
             </span>
             <span className="header__optionLine2">
-              {" "}
-              Offers
+              {"  "} Good Deals
+              {"  "}
               <FaBtc />
             </span>
           </div>
@@ -110,7 +124,7 @@ const Navbar = () => {
             </span>
             <span className="header__optionLine2 ">
               Your Orders
-              <FaShoppingBasket />{" "}
+              <FaShoppingBasket />
               <span className="header__optionBasket">
                 <span className="header__basketCount">1</span>
               </span>

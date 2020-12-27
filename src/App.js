@@ -1,25 +1,28 @@
 import "./App.css";
 import Navbar from "./components/NavBar";
 import Home from "./components/Home";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Slider from "./components/Slider";
+import React, { useState } from "react";
 
 function App() {
+  const [isCategoryToggled, setisCategoryToggled] = useState(false);
+
+  const toggleCategory = () => {
+    setisCategoryToggled(!isCategoryToggled);
+    console.log(isCategoryToggled);
+    console.log("Category toggled");
+  };
+
   return (
     <Router>
       <div className="app">
         <Switch>
-          {/* <Route path="/checkout">
-            <Header/>
-          <Checkout/>
-          </Route>
-          <Route path="/login">
-            <Login/>
-          </Route> */}
-
           <Route path="/">
             {/*Bottom one is the default Route */}
-            <Navbar />
-            <Home />
+            <Navbar toggleCategory={toggleCategory} />
+
+            <Home isCategoryToggled={isCategoryToggled} />
           </Route>
         </Switch>
       </div>

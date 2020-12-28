@@ -74,6 +74,20 @@ body {
   }
 }
 
+.tooltip {
+   display: none;
+   position: absolute;
+   height: auto;
+   background-color: #FCF;
+   overflow: hidden;
+ }
+
+ .hasTooltip:hover .tooltip,
+ .tooltip:hover {
+   display: inline;
+ }
+
+
 @media screen and (max-width: 1092px) {
   .main {
     margin-left: 0px;

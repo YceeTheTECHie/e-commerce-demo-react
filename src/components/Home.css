@@ -4,21 +4,22 @@ body {
 
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 250px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+   width: 250px; /*Set the width of the sidebar*/
+  position: fixed; /*Fixed Sidebar (stay in place on scroll)*/
   z-index: -1; /* Stay on top */
   top: 63px; /* Stay at the top */
   left: 0;
   background-color: #ffffff; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
+   overflow-x: hidden;/*Disable horizontal scroll */
   padding-top: 70px;
 }
 
 .sidenav-mobile {
+  /* Black */
   height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 97%; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 100; /* Stay on top */
+  z-index: 100; /*Stay on top*/
   top: 63px; /* Stay at the top */
   left: 0%;
   background-color: #ffffff; /* Black */
@@ -34,14 +35,18 @@ body {
   text-decoration: none;
 }
 
+
+
+
 /* Active/current link */
 .sidenav a {
   display: block;
   text-decoration: none;
-  padding: 15px;
-  background-color: #2d3e4e;
-  color: white;
-  margin-left: 20px;
+  padding: 5px;
+  cursor: pointer;
+  background-color:white;
+  color:  #2d3e4e;
+  margin-left: 35px;
   margin-right: 20px;
 }
 
@@ -54,7 +59,6 @@ body {
   margin-left: 20px;
   margin-right: 20px;
 }
-/* Links on mouse-over */
 .sidenav a:hover {
   background-color: #555;
   color: white;
@@ -65,14 +69,29 @@ body {
   padding: 0px 10px;
 }
 
+ .tooltip {
+   display: none;
+   position: absolute;
+   height: auto;
+   background-color: #FCF;
+   overflow: hidden;
+ }
+
+ .hasTooltip:hover .tooltip,
+ .tooltip:hover {
+   display: inline;
+ }
+
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
   }
   .sidenav a {
     font-size: 18px;
+
   }
 }
+
 
 @media screen and (max-width: 1092px) {
   .main {

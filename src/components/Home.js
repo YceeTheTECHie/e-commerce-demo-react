@@ -23,15 +23,21 @@ const Home = ({ isCategoryToggled }) => {
       <div className={isCategoryToggled ? " sidenav-mobile" : "sidenav"}>
         <h1 style={{ textAlign: "center" }}>Categories</h1>
 
-        <a href="#">Clothes</a>
-        <br />
-        <a href="#">Bags</a>
-        <br />
+                //catgories and tooltips, a href will be changed to Links later
+        <div className="hasTooltip">
+              <a href="#">Clothes</a>
+          <div className="tooltip">
+              <a href="#">Men</a>
+              <a href="#">Women</a>
+              <a href="#">Boy</a>
+              <a href="#">Ladies</a>
+          </div>
+        </div>
+        {/* <a href="#">Bags</a>
         <a href="#">Accessories</a>
-        <br />
-        <a href="#">Food</a>
-        <br />
+        <a href="#">Food</a> */}
       </div>
+
       <div className="content main">
         <section className="text-center my-5">
           <h2 className="h1-responsive font-weight-bold text-center my-5">
